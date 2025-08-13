@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white text-center">
+                <h3>Add Two Numbers</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{% url 'add' %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="num1" class="form-label">First Number</label>
+                        <input type="number" class="form-control" id="num1" name="num1" placeholder="Enter first number" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="num2" class="form-label">Second Number</label>
+                        <input type="number" class="form-control" id="num2" name="num2" placeholder="Enter second number" required>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
